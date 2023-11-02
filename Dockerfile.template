@@ -34,5 +34,4 @@ RUN apt update && \
 COPY image-files/start.sh image-files/replace.sh ./
 # Override default noVNC file listing
 COPY image-files/index.html /noVNC
-
 CMD [ "./start.sh" ]
