@@ -30,7 +30,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/extrange/ibkr
+          images: ghcr.io/AndrewMarchukov/ibkr
           flavor: |
             latest=false
 
