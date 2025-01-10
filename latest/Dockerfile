@@ -1,7 +1,7 @@
 FROM debian:latest as setup
 
 ENV IBC_VERSION=3.17.0
-ENV INSTALL_FILENAME="ibgateway-10.27.1d-standalone-linux-x64.sh"
+ENV INSTALL_FILENAME="ibgateway-10.33.1e-standalone-linux-x64.sh"
 
 RUN apt update && \
     apt install --no-install-recommends -y \
@@ -15,10 +15,10 @@ RUN apt update && \
     && unzip ibc.zip -d /opt/ibc \
     && rm ibc.zip && \
 # Fetch hashes
-    wget2 https://github.com/AndrewMarchukov/ibkr-docker/releases/download/10.27.1d-latest/ibgateway-10.27.1d-standalone-linux-x64.sh.sha256 \
+    wget2 https://github.com/AndrewMarchukov/ibkr-docker/releases/download/10.33.1e-latest/ibgateway-10.33.1e-standalone-linux-x64.sh.sha256 \
     -O hash  && \
 # Download IB Gateway (which contains TWS) and check hashes
-    wget2 https://github.com/AndrewMarchukov/ibkr-docker/releases/download/10.27.1d-latest/ibgateway-10.27.1d-standalone-linux-x64.sh \
+    wget2 https://github.com/AndrewMarchukov/ibkr-docker/releases/download/10.33.1e-latest/ibgateway-10.33.1e-standalone-linux-x64.sh \
     -O "$INSTALL_FILENAME" \
     && sha256sum -c hash \
     && chmod +x "$INSTALL_FILENAME" \
